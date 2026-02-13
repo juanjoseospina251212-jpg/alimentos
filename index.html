@@ -19,26 +19,11 @@ body {
 .video-container {
   width: 100%;
   max-width: 900px;
-  position: relative;
 }
 
 video {
   width: 100%;
   border-radius: 10px;
-}
-
-.controls {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-
-button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.8);
 }
 </style>
 </head>
@@ -46,22 +31,10 @@ button {
 <body>
 
 <div class="video-container">
-  <video id="miVideo" autoplay muted playsinline controls>
+  <video autoplay muted playsinline controls>
     <source src="video.mp4" type="video/mp4">
   </video>
-
-  <div class="controls">
-    <button onclick="toggleAudio()">Activar sonido</button>
-  </div>
 </div>
-
-<script>
-const video = document.getElementById("miVideo");
-
-function toggleAudio() {
-  video.muted = !video.muted;
-}
-</script>
 
 </body>
 </html>
