@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Video Autoplay</title>
-</head>
-<body style="margin:0;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor</title>
 
-<video autoplay muted playsinline width="100%">
-  <source src="video.mp4" type="video/mp4">
-</video>
+<style>
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.8);
+}
+</style>
+</head>
+
+<body>
+
+<div class="video-container">
+  <video id="miVideo" autoplay muted playsinline controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <div class="controls">
+    <button onclick="toggleAudio()">Activar sonido</button>
+  </div>
+</div>
+
+<script>
+const video = document.getElementById("miVideo");
+
+function toggleAudio() {
+  video.muted = !video.muted;
+}
+</script>
 
 </body>
 </html>
